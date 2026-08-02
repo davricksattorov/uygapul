@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Uygapul — Oʻzbekistonga pul oʻtkazish kurslari</title>
+<meta name="description" content="Yevropadan Oʻzbekistonga pul oʻtkazish. Profee, Wise, Paysend va TransferGo kurslari har kuni yangilanadi. Qaysi biri koʻproq soʻm beradi?">
+<meta property="og:title" content="Uygapul — bugungi kurslar">
+<meta property="og:description" content="Yevropadan Oʻzbekistonga pul oʻtkazish kurslarini taqqoslang.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Onest:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <div class="mast">
+    <a class="logo" href="./index.html">uyga<b>pul</b></a>
+    <div class="langs">
+      <button data-lang="uz" aria-pressed="true">UZ</button>
+      <button data-lang="ru" aria-pressed="false">RU</button>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="kicker" id="kicker"><span class="pip"></span><span id="kickerTxt">…</span></div>
+    <div class="sect-label" id="heroLabel">Bugun eng koʻp beradi</div>
+    <h1 class="winner-name" id="winnerName">—</h1>
+    <div class="winner-sum" id="winnerSum">—</div>
+    <div class="winner-sub" id="winnerSub"></div>
+  </div>
+
+  <div class="control">
+    <span class="eur">€</span>
+    <input id="amt" type="number" inputmode="decimal" value="200" min="5" max="10000" aria-label="Summa">
+    <span class="dest" id="dest">→ Toshkent</span>
+  </div>
+  <div class="chips">
+    <button data-a="100">€100</button>
+    <button data-a="200">€200</button>
+    <button data-a="500">€500</button>
+    <button data-a="1000">€1000</button>
+  </div>
+
+  <div class="sect-label" id="allLabel">Barchasi</div>
+  <div id="rows"></div>
+
+  <div class="share">
+    <h2 id="shareH">Rasm yasab, doʻstlaringizga yuboring</h2>
+    <p id="shareP">Telegramga tayyor rasm — bir bosishda.</p>
+    <button class="btn" id="make">Rasm yasash</button>
+    <canvas id="card" width="820" height="820"></canvas>
+    <a class="btn ghost" id="save" download="uygapul.png">Rasmni saqlash ↓</a>
+  </div>
+
+  <div class="method">
+    <h2 id="methodH">Bu qanday hisoblanadi</h2>
+    <div id="methodBody"></div>
+  </div>
+
+  <div class="foot">
+    <span>uygapul.com</span>
+    <span><a href="./admin.html">admin</a></span>
+  </div>
+</div>
+
+<script src="./data/providers.js"></script>
+<script src="./assets/app.js"></script>
+</body>
+</html>

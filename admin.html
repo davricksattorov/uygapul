@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Uygapul — admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Onest:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <div class="mast">
+    <a class="logo" href="./index.html">uyga<b>pul</b> · admin</a>
+    <a class="logo" href="./index.html" style="font-size:12px;color:var(--ink-soft)">← site</a>
+  </div>
+
+  <div class="tabs">
+    <button data-pane="rates" aria-pressed="true">Rates</button>
+    <button data-pane="setup" aria-pressed="false">Connection</button>
+  </div>
+
+  <!-- ---------- RATES ---------- -->
+  <div class="pane on" id="pane-rates">
+    <div class="adm-note">
+      Edit what each service charges, then <b>Publish</b>. The live site updates in about 30 seconds.
+      Verify these against a real receipt once a month and update the check date.
+    </div>
+
+    <div class="field">
+      <label for="preview">Preview amount (€) — for the payout column only</label>
+      <input id="preview" type="number" value="200" min="5">
+    </div>
+
+    <div id="list"></div>
+
+    <button class="btn ghost" id="add" style="margin-bottom:10px">+ Add a service</button>
+    <button class="btn" id="publish">Publish to live site</button>
+    <button class="btn ghost" id="download" style="margin-top:8px">Download providers.js instead</button>
+    <div class="status" id="status"></div>
+    <p class="small">Download is the fallback: drop the file into <code>data/</code> in your repo on github.com and commit. Works from a phone.</p>
+  </div>
+
+  <!-- ---------- SETUP ---------- -->
+  <div class="pane" id="pane-setup">
+    <div class="adm-note">
+      This connects the admin page to your GitHub repo so Publish can write the file for you.
+      Everything here is stored <b>only in this browser</b> — it is never uploaded and never committed.
+    </div>
+
+    <div class="field">
+      <label for="owner">GitHub username</label>
+      <input id="owner" placeholder="yourname" autocomplete="off">
+    </div>
+    <div class="field">
+      <label for="repo">Repository name</label>
+      <input id="repo" placeholder="uygapul" autocomplete="off">
+    </div>
+    <div class="field">
+      <label for="branch">Branch</label>
+      <input id="branch" value="main" autocomplete="off">
+    </div>
+    <div class="field">
+      <label for="token">Fine-grained access token</label>
+      <input id="token" type="password" placeholder="github_pat_…" autocomplete="off">
+      <p class="small">
+        GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens.
+        Scope it to <b>this one repository</b> with <b>Contents: Read and write</b>. Nothing else.
+      </p>
+    </div>
+    <button class="btn" id="savecfg">Save connection</button>
+    <button class="btn ghost" id="test" style="margin-top:8px">Test connection</button>
+    <div class="status" id="status2"></div>
+  </div>
+
+  <div class="foot"><span>uygapul admin</span><span>local only</span></div>
+</div>
+
+<script src="./data/providers.js"></script>
+<script src="./assets/admin.js"></script>
+</body>
+</html>
